@@ -4,20 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_aocww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q757"]
-size = Vector2(977, 20)
+size = Vector2(594.5, 20)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_6q757")]
-position = Vector2(0, 140)
+position = Vector2(-67, 189)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-546, 25)
 rotation = 0.523599
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(101.566, -60.0826)
-shape = SubResource("RectangleShape2D_6q757")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 220)
@@ -25,6 +21,11 @@ position = Vector2(0, 220)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-2.5, 0)
 shape = SubResource("RectangleShape2D_6q757")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-374, -87)
+shape = SubResource("RectangleShape2D_6q757")
+debug_color = Color(0.85796, 0.000715223, 0.880741, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 154)
@@ -34,14 +35,24 @@ zoom = Vector2(3, 3)
 self_modulate = Color(0.121569, 0.717647, 0, 1)
 position = Vector2(42, 146)
 
+[node name="Jump" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_aocww")]
+position = Vector2(-129, 186)
+estadoAtual = NodePath("Ricochete")
+
+[node name="Bolha2" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_aocww")]
+position = Vector2(6, 188)
+estadoAtual = NodePath("../Jump/Pulo")
+
+[node name="Bolha3" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_aocww")]
+position = Vector2(109, 188)
+estadoAtual = NodePath("../Jump/Impulso")
+
 [node name="Bolha" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_aocww")]
-position = Vector2(72, 186)
-estadoAtual = NodePath("Pulo")
+position = Vector2(174, 188)
+estadoAtual = NodePath("../Jump/Ricochete")
 
-[node name="Bolha2" parent="." instance=ExtResource("2_aocww")]
-position = Vector2(168, 187)
+[node name="Bolha4" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_aocww")]
+position = Vector2(-113, 99)
+estadoAtual = NodePath("../Jump/Bomba")
 
-[node name="Bolha3" parent="." instance=ExtResource("2_aocww")]
-position = Vector2(123, 105)
-
-[editable path="Bolha"]
+[editable path="Jump"]
