@@ -39,11 +39,14 @@ position = Vector2(42, 146)
 position = Vector2(72, 186)
 estadoAtual = NodePath("Pulo")
 
-[node name="Bolha2" parent="." instance=ExtResource("2_aocww")]
+[node name="Bolha2" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_aocww")]
 position = Vector2(168, 187)
+estados = [NodePath("../Bolha/Pulo"), NodePath("Ricochete")]
+estadoAtual = NodePath("../Bolha/Pulo")
 
-[node name="Bolha3" parent="." instance=ExtResource("2_aocww")]
+[node name="Bolha3" parent="." node_paths=PackedStringArray("estados") instance=ExtResource("2_aocww")]
 position = Vector2(123, 105)
+estados = [NodePath("Pulo"), NodePath("Ricochete"), NodePath("Impulso")]
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("3_bp36y")
