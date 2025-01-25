@@ -31,6 +31,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="ProjetoBase"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/script-tabs/plugin.cfg")
+
 [rendering]
 
 renderer/rendering_method="mobile"
