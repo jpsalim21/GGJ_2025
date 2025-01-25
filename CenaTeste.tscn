@@ -1,3 +1,9 @@
+<<<<<<< main
+[gd_scene load_steps=4 format=3 uid="uid://cgwb1ru0a5t5f"]
+
+[ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_6q757"]
+[ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_aocww"]
+=======
 [gd_scene load_steps=9 format=4 uid="uid://bmbydg4ns8ebl"]
 
 [ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_6q757"]
@@ -6,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dfkkqkom4n5b7" path="res://Scripts/BolhaRicochete.gd" id="4_36q4r"]
 [ext_resource type="Script" uid="uid://c1fdlt13lj74f" path="res://Scripts/BolhaPulo.gd" id="5_wgn7g"]
 [ext_resource type="Texture2D" uid="uid://cshl1oym0rnge" path="res://tilesetPlaceholder.png" id="6_qarap"]
+>>>>>>> CriacaoFases
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_345do"]
 texture = ExtResource("6_qarap")
@@ -229,6 +236,23 @@ remote_path = NodePath("../../Camera2D")
 position = Vector2(0, 140)
 zoom = Vector2(3, 3)
 
+<<<<<<< main
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.121569, 0.717647, 0, 1)
+position = Vector2(42, 146)
+
+[node name="Bolha" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_aocww")]
+position = Vector2(72, 186)
+estadoAtual = NodePath("Pulo")
+
+[node name="Bolha2" parent="." instance=ExtResource("2_aocww")]
+position = Vector2(168, 187)
+
+[node name="Bolha3" parent="." instance=ExtResource("2_aocww")]
+position = Vector2(123, 105)
+
+[editable path="Bolha"]
+=======
 [node name="BolhaImpulso" parent="." instance=ExtResource("2_aocww")]
 position = Vector2(83, 185)
 script = ExtResource("3_bp36y")
@@ -251,3 +275,4 @@ position = Vector2(42, 146)
 position = Vector2(-3, 0)
 tile_map_data = PackedByteArray("AAAFAA0AAAABAAEAAAAGAA0AAAABAAEAAAD6/wwAAAAQAAEAAAD6/w0AAAAQAAIAAAD7/wwAAAARAAEAAAD7/w0AAAARAAIAAAD4/wsAAAAQAAEAAAD4/wwAAAAQAAIAAAD5/wsAAAARAAEAAAD5/wwAAAARAAIAAAD2/woAAAAQAAEAAAD2/wsAAAAQAAIAAAD3/woAAAARAAEAAAD3/wsAAAARAAIAAAD0/wkAAAAQAAEAAAD0/woAAAAQAAIAAAD1/wkAAAARAAEAAAD1/woAAAARAAIAAAAEAA0AAAABAAEAAAADAA0AAAABAAEAAAACAA0AAAABAAEAAAABAA0AAAABAAEAAAAAAA0AAAABAAEAAAD//w0AAAABAAEAAAD+/w0AAAABAAEAAAD9/w0AAAABAAEAAAD8/w0AAAABAAEAAAD0/wgAAAAHAAEAAAD0/wcAAAAHAAEAAAD0/wYAAAAHAAEAAAD0/wUAAAAHAAEAAAD0/wQAAAAHAAEAAAD0/wMAAAAHAAEAAAD0/wIAAAAHAAEAAAD0/wEAAAAHAAEAAAD0/wAAAAAHAAEAAAD0////AAAHAAEAAAD0//7/AAAHAAEAAAAPABEAAAADAAEAAAAQABEAAAADAAEAAAARABEAAAADAAEAAAASABEAAAADAAEAAAATABEAAAADAAEAAAAUABEAAAADAAEAAAAVABEAAAADAAEAAAAWABEAAAADAAEAAAAXABEAAAADAAEAAAAYABEAAAADAAEAAAAZABEAAAADAAEAAAAaABEAAAADAAEAAAAbABEAAAADAAEAAAAbABAAAAAHAAEAAAAbAA8AAAAHAAEAAAAbAA4AAAAHAAEAAAAbAA0AAAAHAAEAAAAbAAwAAAAHAAEAAAAbAAsAAAAHAAEAAAAbAAoAAAAHAAEAAAAbAAkAAAAHAAEAAAAbAAgAAAAHAAEAAAAbAAcAAAAHAAEAAAAbAAYAAAAHAAEAAAAbAAUAAAAHAAEAAAA=")
 tile_set = SubResource("TileSet_k3s50")
+>>>>>>> CriacaoFases
