@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://chwtvv2rivdod"]
+[gd_scene load_steps=5 format=4 uid="uid://chwtvv2rivdod"]
 
 [ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_k5jj5"]
 [ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_274no"]
 [ext_resource type="TileSet" uid="uid://cmvtxxxx24q4r" path="res://Tileset.tres" id="3_6qdbi"]
+[ext_resource type="PackedScene" uid="uid://cug1vbuncmy08" path="res://Cenas/FinishLine.tscn" id="4_274no"]
 
 [node name="Fase11" type="Node2D"]
 
@@ -65,5 +66,9 @@ estadoAtual = NodePath("../Jump/Ricochete")
 position = Vector2(115, -124)
 estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
 estadoAtual = NodePath("../Jump/Pulo")
+
+[node name="Area2D" parent="." instance=ExtResource("4_274no")]
+position = Vector2(402, -187)
+nextScene = "res://ProjetoBase/Menus/MenuInicial.tscn"
 
 [editable path="Jump"]
