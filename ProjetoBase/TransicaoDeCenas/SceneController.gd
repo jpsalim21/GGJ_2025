@@ -19,6 +19,7 @@ func changeSceneTo(path : StringName, animacao1 : String = "Diamond", animacao2:
 func reloadCurrentScene(animacao1 : String = "Diamond", animacao2 : String = "Diamond"):
 	await Cortina.preencheTela(true, animacao1)
 	get_tree().reload_current_scene()
+	get_tree().paused = false
 	Cortina.preencheTela(false, animacao2)
 	if resetFocus:
 		Cortina._setFocus(Vector2(0.5, 0.5))
