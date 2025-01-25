@@ -248,6 +248,7 @@ _data = {
 }
 
 [node name="Transicao" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("2_64njm")
 
 [node name="DiamondTransition" type="ColorRect" parent="."]
