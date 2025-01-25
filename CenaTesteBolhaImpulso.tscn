@@ -93,14 +93,15 @@ self_modulate = Color(0.121569, 0.717647, 0, 1)
 position = Vector2(42, 146)
 
 [node name="Bolha" parent="." instance=ExtResource("2_sloti")]
-position = Vector2(72, 186)
+position = Vector2(89, 182)
 
 [node name="Bolha2" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_sloti")]
 position = Vector2(77, 50)
 estadoAtual = NodePath("../Bolha/Impulso")
 
-[node name="Bolha3" parent="." instance=ExtResource("2_sloti")]
-position = Vector2(-31, 51)
+[node name="Bolha3" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_sloti")]
+position = Vector2(-56, 49)
+estadoAtual = NodePath("../Bolha/Pulo")
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("3_1rfa0")
