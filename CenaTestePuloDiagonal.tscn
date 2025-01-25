@@ -1,15 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgwb1ru0a5t5f"]
+[gd_scene load_steps=5 format=3 uid="uid://bxu0qv2h6woc7"]
 
-[ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_6q757"]
-[ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_aocww"]
-[ext_resource type="Script" uid="uid://hwvbrgt6n1wg" path="res://Scripts/ReiniciaFase.gd" id="3_bp36y"]
+[ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_bwl4k"]
+[ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_pp6qr"]
+[ext_resource type="Script" uid="uid://hwvbrgt6n1wg" path="res://Scripts/ReiniciaFase.gd" id="3_vemnp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q757"]
 size = Vector2(977, 20)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_6q757")]
+[node name="Player" parent="." instance=ExtResource("1_bwl4k")]
 position = Vector2(0, 140)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -38,17 +38,17 @@ zoom = Vector2(3, 3)
 self_modulate = Color(0.121569, 0.717647, 0, 1)
 position = Vector2(42, 146)
 
-[node name="Bolha" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_aocww")]
+[node name="Bolha" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_pp6qr")]
 position = Vector2(72, 186)
 estadoAtual = NodePath("Pulo")
 
-[node name="Bolha2" parent="." instance=ExtResource("2_aocww")]
+[node name="Bolha2" parent="." instance=ExtResource("2_pp6qr")]
 position = Vector2(168, 187)
 
-[node name="Bolha3" parent="." instance=ExtResource("2_aocww")]
+[node name="Bolha3" parent="." instance=ExtResource("2_pp6qr")]
 position = Vector2(123, 105)
 
 [node name="Node" type="Node" parent="."]
-script = ExtResource("3_bp36y")
+script = ExtResource("3_vemnp")
 
 [editable path="Bolha"]
