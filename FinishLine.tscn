@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cug1vbuncmy08"]
+
+[ext_resource type="Script" uid="uid://ca50eu8r33303" path="res://FinishFase.gd" id="1_5xwrx"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_5xwrx")

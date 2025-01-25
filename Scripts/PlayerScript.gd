@@ -5,6 +5,8 @@ var torque : float = 5000 #Testei esse valor aq e deu certo. Podemos alterar dep
 var direcao : float
 
 var bolhaProx : BolhaController
+@onready var area: Area2D = $Area2D
+
 
 func _process(delta: float) -> void:
 	direcao = Input.get_axis("Esquerda", "Direita")
@@ -30,5 +32,8 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	var bolha = area as BolhaController
 	if not bolha:
 		return
-	bolhaProx = null
+	if area.has_overlapping_areas():
+		bolhaProx = area.get_overlapping_areas()[0].get_script()
+	else:
+		bolhaProx = null
 	pass # Replace with function body.
