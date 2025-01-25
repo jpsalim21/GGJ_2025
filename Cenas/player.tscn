@@ -1,20 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://u3j7oww4i4ae"]
+[gd_scene load_steps=6 format=3 uid="uid://u3j7oww4i4ae"]
 
 [ext_resource type="Script" uid="uid://duulvi33qphd1" path="res://Scripts/PlayerScript.gd" id="1_pmvhq"]
-[ext_resource type="Texture2D" uid="uid://beq23gbn31g3r" path="res://icon.svg" id="2_iersn"]
+[ext_resource type="Texture2D" uid="uid://0pumx0uaj6om" path="res://Sprites/BubbleFish.png" id="2_pmvhq"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aocww"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_iersn"]
+atlas = ExtResource("2_pmvhq")
+region = Rect2(24, 17, 21, 17)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_6q757"]
-radius = 64.0078
+radius = 9.05539
 
 [node name="Player" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_aocww")
-angular_damp = 2.0
+angular_damp = 8.0
 script = ExtResource("1_pmvhq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_iersn")
+texture = SubResource("AtlasTexture_iersn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_6q757")

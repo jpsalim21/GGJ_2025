@@ -1,17 +1,10 @@
-extends Area2D
-
-@onready var audio: AudioStreamPlayer = $AudioStreamPlayer
+extends BolhaBase
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func destruir():
-	audio.play()
-	visible = false
-	await audio.finished
-	queue_free()
