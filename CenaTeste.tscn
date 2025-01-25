@@ -1,16 +1,13 @@
-[gd_scene load_steps=5 format=4 uid="uid://cgwb1ru0a5t5f"]
+[gd_scene load_steps=4 format=4 uid="uid://cgwb1ru0a5t5f"]
 
 [ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_6q757"]
 [ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_aocww"]
-
-[ext_resource type="Script" uid="uid://hwvbrgt6n1wg" path="res://Scripts/ReiniciaFase.gd" id="3_bp36y"]
-[ext_resource type="TileSet" uid="uid://cmvtxxxx24q4r" path="res://Tileset.tres" id="4_36q4r"]
+[ext_resource type="TileSet" uid="uid://cmvtxxxx24q4r" path="res://Tileset.tres" id="3_bp36y"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_6q757")]
 position = Vector2(-67, 189)
-
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 140)
@@ -28,5 +25,8 @@ estadoAtual = NodePath("Ricochete")
 position = Vector2(6, 188)
 estadoAtual = NodePath("../Jump/Pulo")
 
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD3/w0AAAACAAMAAAD4/w0AAAACAAMAAAD5/w0AAAACAAMAAAD6/w0AAAACAAMAAAD7/w0AAAACAAMAAAD8/w0AAAACAAMAAAD9/w0AAAACAAMAAAD+/w0AAAACAAMAAAD//w0AAAACAAMAAAAAAA0AAAACAAMAAAABAA0AAAACAAMAAAACAA0AAAACAAMAAAADAA0AAAACAAMAAAAEAA0AAAACAAMAAAAFAA0AAAACAAMAAAAGAA0AAAACAAMAAAAHAA0AAAACAAMAAAAIAA0AAAACAAMAAAAJAA0AAAACAAMAAAAKAA0AAAACAAMAAAALAA0AAAACAAMAAAAMAA0AAAACAAMAAAANAA0AAAACAAMAAAAOAA0AAAACAAMAAAAPAA0AAAACAAMAAAAQAA0AAAACAAMAAAARAA0AAAACAAMAAAD1/wwAAAAAAAAAAAD1/w0AAAAAAAEAAAD2/wwAAAABAAAAAAD2/w0AAAABAAEAAADz/wsAAAAAAAAAAADz/wwAAAAAAAEAAAD0/wsAAAABAAAAAAD0/wwAAAABAAEAAADx/woAAAAAAAAAAADx/wsAAAAAAAEAAADy/woAAAABAAAAAADy/wsAAAABAAEAAADv/wkAAAAAAAAAAADv/woAAAAAAAEAAADw/wkAAAABAAAAAADw/woAAAABAAEAAAA=")
+tile_set = ExtResource("3_bp36y")
 
 [editable path="Jump"]
