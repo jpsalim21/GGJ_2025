@@ -9,3 +9,8 @@ func _process(delta: float) -> void:
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	state.apply_torque(direcao * torque)
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	
+	pass # Replace with function body.

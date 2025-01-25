@@ -1,8 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4gm4wakb54g1"]
+[gd_scene load_steps=14 format=3 uid="uid://b4gm4wakb54g1"]
 
-[ext_resource type="Script" uid="uid://c868jypo0w7jq" path="res://Scripts/bolha.gd" id="1_ndnpq"]
+[ext_resource type="Script" uid="uid://b3moqwwp63m1u" path="res://Scripts/Bolhas/BolhaController.gd" id="1_fb323"]
 [ext_resource type="Shader" uid="uid://dp7ntsa5bpo02" path="res://Cenas/ShaderBolha.gdshader" id="2_fb323"]
 [ext_resource type="Texture2D" uid="uid://bl5e8pad7et7r" path="res://Sprites/Bolhas.png" id="3_fb323"]
+[ext_resource type="Script" uid="uid://cm1ysjeucfslv" path="res://Scripts/Bolhas/BolhaImpulso.gd" id="4_ygvph"]
+[ext_resource type="Script" uid="uid://c1fdlt13lj74f" path="res://Scripts/Bolhas/BolhaPulo.gd" id="5_bktnm"]
+[ext_resource type="Script" uid="uid://dfkkqkom4n5b7" path="res://Scripts/Bolhas/BolhaRicochete.gd" id="6_u5x8c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6q757"]
+radius = 15.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb323"]
+atlas = ExtResource("3_fb323")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hyenh"]
 shader = ExtResource("2_fb323")
@@ -14,20 +24,47 @@ shader_parameter/speedy = 5.0
 atlas = ExtResource("3_fb323")
 region = Rect2(32, 64, 32, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6q757"]
-radius = 15.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygvph"]
+atlas = ExtResource("3_fb323")
+region = Rect2(0, 32, 32, 32)
 
-[node name="Bolha" type="Area2D"]
-script = ExtResource("1_ndnpq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bktnm"]
+atlas = ExtResource("3_fb323")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5x8c"]
+atlas = ExtResource("3_fb323")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Bolha" type="Area2D" node_paths=PackedStringArray("estados", "estadoAtual")]
+script = ExtResource("1_fb323")
+estados = [NodePath("Impulso"), NodePath("Pulo"), NodePath("Ricochete")]
+estadoAtual = NodePath("Impulso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6q757")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_fb323")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 material = SubResource("ShaderMaterial_hyenh")
 position = Vector2(1.43051e-06, 1.43051e-06)
 texture = SubResource("AtlasTexture_hyenh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_6q757")
+[node name="Impulso" type="Node" parent="."]
+script = ExtResource("4_ygvph")
+spriteIcon = SubResource("AtlasTexture_ygvph")
+
+[node name="Pulo" type="Node" parent="."]
+script = ExtResource("5_bktnm")
+spriteIcon = SubResource("AtlasTexture_bktnm")
+
+[node name="Ricochete" type="Node" parent="."]
+script = ExtResource("6_u5x8c")
+spriteIcon = SubResource("AtlasTexture_u5x8c")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
