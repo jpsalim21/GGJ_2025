@@ -1,11 +1,14 @@
 shader_type canvas_item;
 
-uniform vec4 corVerde;
+const vec4 corVerde = vec4(0.122, 0.718, 0.0, 1.0);
+uniform float velocidade = 1.0;
+uniform float magnitude = 1.0;
 
 void vertex() {
-	// Called for every vertex the material is visible on.
+	vec2 newPos = vec2(VERTEX.x + sin(VERTEX.y * TIME * velocidade) * magnitude, VERTEX.y + cos(VERTEX.x * TIME * velocidade));
+	VERTEX = newPos;
 }
 
 void fragment() {
-	// Called for every pixel the material is visible on.
+	
 }
