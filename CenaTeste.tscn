@@ -1,28 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgwb1ru0a5t5f"]
+[gd_scene load_steps=5 format=3 uid="uid://cgwb1ru0a5t5f"]
 
-[ext_resource type="Texture2D" uid="uid://beq23gbn31g3r" path="res://icon.svg" id="1_6q757"]
-[ext_resource type="Script" uid="uid://duulvi33qphd1" path="res://Scripts/PlayerScript.gd" id="1_aocww"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aocww"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6q757"]
-radius = 64.0078
+[ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_6q757"]
+[ext_resource type="Script" uid="uid://c868jypo0w7jq" path="res://bolha.gd" id="2_aocww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q757"]
 size = Vector2(977, 20)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6q757"]
+
 [node name="Node2D" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_aocww")
-angular_damp = 2.0
-script = ExtResource("1_aocww")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("1_6q757")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_6q757")
+[node name="Player" parent="." instance=ExtResource("1_6q757")]
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-546, 25)
@@ -40,3 +28,11 @@ position = Vector2(-2.5, 0)
 shape = SubResource("RectangleShape2D_6q757")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Bolha" type="Area2D" parent="."]
+script = ExtResource("2_aocww")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bolha"]
+shape = SubResource("CircleShape2D_6q757")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Bolha"]
