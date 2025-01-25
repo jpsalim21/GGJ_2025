@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=4 uid="uid://ceixgl1pwvkcb"]
+
+[ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_hrxwq"]
+[ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_ksx0g"]
+[ext_resource type="TileSet" uid="uid://cmvtxxxx24q4r" path="res://Tileset.tres" id="3_d5ji2"]
+
+[node name="Fase11" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_hrxwq")]
+position = Vector2(-205, 150)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-56, 22)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.121569, 0.717647, 0, 1)
+position = Vector2(-78, 11)
+
+[node name="Jump" parent="." node_paths=PackedStringArray("estados") instance=ExtResource("2_ksx0g")]
+position = Vector2(-7, 140)
+estados = [NodePath("Pulo"), NodePath("Impulso")]
+
+[node name="Bolha2" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_ksx0g")]
+position = Vector2(44, 44)
+estados = [NodePath("../Jump/Ricochete"), NodePath("Pulo")]
+estadoAtual = NodePath("../Jump/Ricochete")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD5/woAAAACAAMAAAD6/woAAAACAAMAAAD7/woAAAACAAMAAAD8/woAAAACAAMAAAD9/woAAAACAAMAAAD+/woAAAACAAMAAAD//woAAAACAAMAAAD4/woAAAACAAMAAAD3/woAAAACAAMAAAD2/woAAAACAAMAAAD1/woAAAACAAMAAAD0/woAAAACAAMAAADz/woAAAACAAMAAADy/woAAAACAAMAAADx/woAAAACAAMAAAAEAPz/AAAAAAUAAAAEAP3/AAAAAAUAAAAEAP7/AAAAAAUAAAAEAP//AAAAAAUAAAAEAAAAAAAAAAUAAAAEAAEAAAAAAAUAAAAEAAIAAAAAAAUAAAAEAAMAAAAAAAUAAAAEAAQAAAAAAAUAAAAEAAUAAAAAAAUAAAAEAAYAAAAAAAUAAAAEAAcAAAAAAAUAAAAEAAgAAAAAAAUAAAAEAAkAAAAAAAUAAAAAAAoAAAACAAMAAAABAAoAAAACAAMAAAACAAoAAAACAAMAAAADAAoAAAACAAMAAAAEAAoAAAACAAMAAAD6////AAAEAAUAAAD6/wUAAAADAAMAAAD6/wYAAAAEAAUAAADx/wUAAAACAAMAAADy/wUAAAACAAMAAADz/wUAAAACAAMAAAD0/wUAAAACAAMAAAD1/wUAAAACAAMAAAD2/wUAAAACAAMAAAD3/wUAAAACAAMAAAD4/wUAAAACAAMAAAD5/wUAAAACAAMAAAD6/wcAAAADAAcAAAD5/wcAAAACAAcAAAD4/wcAAAACAAcAAAD3/wcAAAACAAcAAAD2/wcAAAACAAcAAAD1/wcAAAACAAcAAAD0/wcAAAACAAcAAADz/wcAAAACAAcAAADy/wcAAAACAAcAAADx/wcAAAACAAcAAAD6//7/AAAEAAUAAAD6//3/AAAEAAUAAAD6//z/AAAEAAUAAADy/wMAAAACAAUAAAD6//v/AAAEAAUAAAD6//r/AAAEAAUAAAD6//n/AAAEAAUAAAAEAPv/AAAAAAUAAAAEAPr/AAAAAAUAAAAEAPn/AAAAAAUAAAD6/wAAAAAEAAYAAAD5/wAAAAACAAcAAAD4/wAAAAACAAcAAAD3/wAAAAACAAcAAAD2/wAAAAACAAcAAAD1/wAAAAACAAcAAAD0/wAAAAACAAcAAADz/wAAAAACAAcAAADy/wAAAAACAAcAAADx/wAAAAACAAcAAAA=")
+tile_set = ExtResource("3_d5ji2")
+
+[editable path="Jump"]

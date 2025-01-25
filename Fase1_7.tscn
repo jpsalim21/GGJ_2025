@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=4 uid="uid://chwtvv2rivdod"]
+
+[ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_k5jj5"]
+[ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_274no"]
+[ext_resource type="TileSet" uid="uid://cmvtxxxx24q4r" path="res://Tileset.tres" id="3_6qdbi"]
+
+[node name="Fase11" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_k5jj5")]
+position = Vector2(15, 145)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(153, -62)
+zoom = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.121569, 0.717647, 0, 1)
+position = Vector2(59, 147)
+
+[node name="Jump" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_274no")]
+position = Vector2(113, 143)
+estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
+estadoAtual = NodePath("Impulso")
+
+[node name="Bolha2" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_274no")]
+position = Vector2(176, 141)
+estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
+estadoAtual = NodePath("../Jump/Pulo")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAKAAoAAAACAAMAAAALAAoAAAACAAMAAAAMAAoAAAACAAMAAAANAAoAAAACAAMAAAAOAAoAAAACAAMAAAAPAAoAAAACAAMAAAAQAAoAAAACAAMAAAARAAoAAAACAAMAAAASAAoAAAACAAMAAAATAAoAAAACAAMAAAAUAAoAAAACAAMAAAAVAAoAAAACAAMAAAAWAAoAAAACAAMAAAAHAAoAAAACAAMAAAAIAAoAAAACAAMAAAAJAAoAAAACAAMAAAD8/woAAAADAAQAAAD9/woAAAACAAMAAAD+/woAAAACAAMAAAD//woAAAACAAMAAAAAAAoAAAACAAMAAAABAAoAAAACAAMAAAACAAoAAAACAAMAAAADAAoAAAACAAMAAAAEAAoAAAACAAMAAAAFAAoAAAACAAMAAAAGAAoAAAACAAMAAAAaAPr/AAAAAAUAAAAaAPv/AAAAAAUAAAAaAPz/AAAAAAUAAAAaAP3/AAAAAAUAAAAaAP7/AAAAAAUAAAAaAP//AAAAAAUAAAAaAAAAAAAAAAUAAAAaAAEAAAAAAAUAAAAaAAIAAAAAAAUAAAAaAAMAAAAAAAUAAAAaAAQAAAAAAAUAAAAaAAUAAAAAAAUAAAAaAAYAAAAAAAUAAAAaAAcAAAAAAAUAAAAaAAgAAAAAAAUAAAAaAAkAAAAAAAUAAAAXAAoAAAACAAMAAAAYAAoAAAACAAMAAAAZAAoAAAACAAMAAAAaAAoAAAACAAMAAAD8/wkAAAAEAAUAAAD8/wgAAAAEAAUAAAD8/wcAAAAEAAUAAAD8/wYAAAAEAAUAAAD8/wUAAAAEAAUAAAD8/wQAAAAEAAUAAAD8/wMAAAAEAAUAAAD8/wIAAAAEAAUAAAD8/wEAAAAEAAUAAAD8/wAAAAAEAAUAAAD8////AAAEAAUAAAD8//7/AAAEAAUAAAD8//3/AAAEAAUAAAD8//z/AAAEAAUAAAD8//v/AAAEAAUAAAD8//r/AAAEAAUAAAD8//n/AAAEAAUAAAD8//j/AAAEAAUAAAD8//f/AAAEAAUAAAD8//b/AAAEAAUAAAD8//X/AAAEAAUAAAAaAPn/AAAAAAUAAAAaAPj/AAAAAAUAAAAaAPf/AAAAAAUAAAAaAPb/AAAAAAUAAAAaAPX/AAAAAAUAAAAaAPT/AAAAAAUAAAAaAPP/AAAAAAUAAAAaAPL/AAAAAAUAAAAQAPX/AAACAAMAAAARAPX/AAACAAMAAAASAPX/AAACAAMAAAATAPX/AAACAAMAAAAUAPX/AAACAAMAAAAVAPX/AAACAAMAAAAWAPX/AAACAAMAAAAXAPX/AAACAAMAAAAYAPX/AAACAAMAAAAZAPX/AAACAAMAAAAUAPH/AAAAAAUAAAAUAPD/AAAAAAUAAAAUAO//AAAAAAUAAAAUAO7/AAAAAAUAAAA=")
+tile_set = ExtResource("3_6qdbi")
+
+[node name="Bolha4" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_274no")]
+position = Vector2(236, 62)
+estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
+estadoAtual = NodePath("../Jump/Ricochete")
+
+[node name="Bolha6" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_274no")]
+position = Vector2(51, 48)
+estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
+estadoAtual = NodePath("../Jump/Pulo")
+
+[node name="Bolha5" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_274no")]
+position = Vector2(7, -18)
+estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
+estadoAtual = NodePath("../Jump/Ricochete")
+
+[node name="Bolha7" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_274no")]
+position = Vector2(208, -36)
+estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
+estadoAtual = NodePath("../Jump/Pulo")
+
+[node name="Bolha8" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_274no")]
+position = Vector2(248, -82)
+estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
+estadoAtual = NodePath("../Jump/Ricochete")
+
+[node name="Bolha9" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_274no")]
+position = Vector2(73, -150)
+estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
+estadoAtual = NodePath("../Jump/Ricochete")
+
+[node name="Bolha10" parent="." node_paths=PackedStringArray("estados", "estadoAtual") instance=ExtResource("2_274no")]
+position = Vector2(115, -124)
+estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
+estadoAtual = NodePath("../Jump/Pulo")
+
+[editable path="Jump"]
