@@ -1,35 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgwb1ru0a5t5f"]
+[gd_scene load_steps=7 format=3 uid="uid://cgwb1ru0a5t5f"]
 
-[ext_resource type="Texture2D" uid="uid://beq23gbn31g3r" path="res://icon.svg" id="1_6q757"]
-[ext_resource type="Script" uid="uid://duulvi33qphd1" path="res://Scripts/PlayerScript.gd" id="1_aocww"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aocww"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6q757"]
-radius = 64.0078
+[ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_6q757"]
+[ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_aocww"]
+[ext_resource type="Script" uid="uid://cm1ysjeucfslv" path="res://Scripts/BolhaImpulso.gd" id="3_bp36y"]
+[ext_resource type="Script" uid="uid://dfkkqkom4n5b7" path="res://Scripts/BolhaRicochete.gd" id="4_36q4r"]
+[ext_resource type="Script" uid="uid://c1fdlt13lj74f" path="res://Scripts/BolhaPulo.gd" id="5_wgn7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6q757"]
 size = Vector2(977, 20)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_aocww")
-angular_damp = 2.0
-script = ExtResource("1_aocww")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("1_6q757")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_6q757")
+[node name="Player" parent="." instance=ExtResource("1_6q757")]
+position = Vector2(0, 140)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(-546, 25)
 rotation = 0.523599
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-2.5, 0)
+position = Vector2(101.566, -60.0826)
 shape = SubResource("RectangleShape2D_6q757")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -40,3 +30,23 @@ position = Vector2(-2.5, 0)
 shape = SubResource("RectangleShape2D_6q757")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 154)
+zoom = Vector2(3, 3)
+
+[node name="Bolha" parent="." instance=ExtResource("2_aocww")]
+position = Vector2(132, 52)
+script = ExtResource("3_bp36y")
+forcaImpulso = 500.0
+
+[node name="Bolha2" parent="." instance=ExtResource("2_aocww")]
+position = Vector2(161, 189)
+script = ExtResource("4_36q4r")
+forcaImpulso = 500.0
+
+[node name="Bolha3" parent="." instance=ExtResource("2_aocww")]
+position = Vector2(93, 191)
+script = ExtResource("5_wgn7g")
+forcaImpulso = 500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(42, 146)
