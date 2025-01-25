@@ -47,3 +47,6 @@ forcaImpulso = 500.0
 position = Vector2(93, 191)
 script = ExtResource("5_wgn7g")
 forcaImpulso = 500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(42, 146)
