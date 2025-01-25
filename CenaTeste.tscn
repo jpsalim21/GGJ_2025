@@ -34,17 +34,17 @@ position = Vector2(0, 154)
 zoom = Vector2(3, 3)
 
 [node name="Bolha" parent="." instance=ExtResource("2_aocww")]
-position = Vector2(132, 52)
+position = Vector2(178, 63)
 script = ExtResource("3_bp36y")
 forcaImpulso = 500.0
 
 [node name="Bolha2" parent="." instance=ExtResource("2_aocww")]
-position = Vector2(161, 189)
+position = Vector2(153, 188)
 script = ExtResource("4_36q4r")
 forcaImpulso = 500.0
 
 [node name="Bolha3" parent="." instance=ExtResource("2_aocww")]
-position = Vector2(93, 191)
+position = Vector2(89, 69)
 script = ExtResource("5_wgn7g")
 forcaImpulso = 500.0
 
