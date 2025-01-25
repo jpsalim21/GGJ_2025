@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func destruir():
 	audio.play()
-	visible = false
+	#visible = false
 	await audio.finished
 	queue_free()
 

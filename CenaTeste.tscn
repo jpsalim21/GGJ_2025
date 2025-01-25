@@ -34,19 +34,20 @@ position = Vector2(0, 154)
 zoom = Vector2(3, 3)
 
 [node name="Bolha" parent="." instance=ExtResource("2_aocww")]
-position = Vector2(178, 63)
+position = Vector2(166, 187)
 script = ExtResource("3_bp36y")
 forcaImpulso = 500.0
 
 [node name="Bolha2" parent="." instance=ExtResource("2_aocww")]
-position = Vector2(153, 188)
+position = Vector2(142, 82)
 script = ExtResource("4_36q4r")
 forcaImpulso = 500.0
 
 [node name="Bolha3" parent="." instance=ExtResource("2_aocww")]
-position = Vector2(89, 69)
+position = Vector2(91, 188)
 script = ExtResource("5_wgn7g")
 forcaImpulso = 500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.121569, 0.717647, 0, 1)
 position = Vector2(42, 146)

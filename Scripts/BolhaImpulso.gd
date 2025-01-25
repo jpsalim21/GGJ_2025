@@ -8,7 +8,7 @@ func encostou(body: Node2D) -> void:
 	if not player:
 		return
 	
-	var dir = sign(player.angular_velocity)
+	var dir = sign(player.linear_velocity.x)
 	
 	player.angular_velocity = 0
 	player.linear_velocity = Vector2.ZERO
