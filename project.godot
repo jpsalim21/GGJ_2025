@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="GGJ_2025"
-run/main_scene="res://Menus/MenuInicial.tscn"
+run/main_scene="res://ProjetoBase/Menus/MenuInicial.tscn"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Cortina="*res://TransicaoDeCenas/TransicaoCena.tscn"
-SceneController="*res://TransicaoDeCenas/SceneController.gd"
-GameController="*res://Menus/GameController.gd"
+Cortina="*res://ProjetoBase/TransicaoDeCenas/TransicaoCena.tscn"
+SceneController="*res://ProjetoBase/TransicaoDeCenas/SceneController.gd"
+GameController="*res://ProjetoBase/Menus/GameController.gd"
 
 [display]
 
@@ -34,6 +34,19 @@ project/assembly_name="ProjetoBase"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/script-tabs/plugin.cfg")
+
+[input]
+
+Esquerda={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+]
+}
+Direita={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+]
+}
 
 [rendering]
 
