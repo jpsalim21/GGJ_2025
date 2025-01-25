@@ -1,6 +1,7 @@
 extends RigidBody2D
+class_name Player
 
-var torque : float = 40000 #Testei esse valor aq e deu certo. Podemos alterar depois, mas aqui ele consegue subir 30 graus sem problemas
+var torque : float = 5000 #Testei esse valor aq e deu certo. Podemos alterar depois, mas aqui ele consegue subir 30 graus sem problemas
 var direcao : float
 
 func _process(delta: float) -> void:
