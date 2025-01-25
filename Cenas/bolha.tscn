@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://b4gm4wakb54g1"]
 
 [ext_resource type="Script" uid="uid://b3moqwwp63m1u" path="res://Scripts/Bolhas/BolhaController.gd" id="1_fb323"]
-[ext_resource type="Shader" uid="uid://dp7ntsa5bpo02" path="res://Cenas/ShaderBolha.gdshader" id="2_fb323"]
+[ext_resource type="Shader" uid="uid://dp7ntsa5bpo02" path="res://Shader/ShaderBolha.gdshader" id="2_fb323"]
 [ext_resource type="Texture2D" uid="uid://bl5e8pad7et7r" path="res://Sprites/Bolhas.png" id="3_fb323"]
 [ext_resource type="Script" uid="uid://cm1ysjeucfslv" path="res://Scripts/Bolhas/BolhaImpulso.gd" id="4_ygvph"]
 [ext_resource type="Script" uid="uid://c1fdlt13lj74f" path="res://Scripts/Bolhas/BolhaPulo.gd" id="5_bktnm"]
