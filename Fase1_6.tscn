@@ -43,7 +43,7 @@ estados = [NodePath("Ricochete"), NodePath("Pulo"), NodePath("Impulso")]
 estadoAtual = NodePath("../Jump/Impulso")
 
 [node name="Area2D" parent="." instance=ExtResource("4_016hl")]
-position = Vector2(-82, 54)
+position = Vector2(-82, 51)
 nextScene = "res://Fase1_7.tscn"
 
 [editable path="Jump"]

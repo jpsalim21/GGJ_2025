@@ -32,7 +32,7 @@ tile_map_data = PackedByteArray("AAD5/wUAAAACAAMAAAD6/wUAAAACAAMAAAD7/wUAAAACAAM
 tile_set = ExtResource("3_pqvl7")
 
 [node name="Area2D" parent="." instance=ExtResource("4_n1f45")]
-position = Vector2(309, -10)
+position = Vector2(311, -12)
 nextScene = "res://Fase1_4.tscn"
 
 [editable path="Jump"]
