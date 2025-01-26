@@ -13,7 +13,7 @@ region = Rect2(24, 17, 21, 17)
 radius = 9.05539
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pmvhq"]
-radius = 45.0111
+radius = 62.0081
 
 [node name="Player" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_aocww")
@@ -21,6 +21,7 @@ angular_damp = 8.0
 script = ExtResource("1_pmvhq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 3
 texture = SubResource("AtlasTexture_iersn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

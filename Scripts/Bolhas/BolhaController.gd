@@ -5,6 +5,18 @@ class_name BolhaController
 @export var estadoAtual : BolhaBase
 
 @onready var spriteEfeito : Sprite2D = $Sprite2D2
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@export var audioClip : AudioStream
+
+var inFocus : bool = false:
+	set(value):
+		inFocus = value
+		if inFocus:
+			spriteEfeito.z_index = 4
+			$Sprite2D.z_index = 4
+		else:
+			spriteEfeito.z_index = 1
+			$Sprite2D.z_index = 1
 
 var speed = 1.5  # Ajuste esse valor para controlar a velocidade do movimento
 var amplitude = 70  # A altura do movimento (quanto sobe/ desce)
@@ -35,4 +47,6 @@ func encostou(body : Node2D):
 	if not player:
 		return
 	
+	audio_stream_player.stream = audioClip
+	audio_stream_player.play()
 	estadoAtual.encostou(player)

@@ -1,14 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu5m1ct25rwpc"]
+[gd_scene load_steps=3 format=3 uid="uid://cu5m1ct25rwpc"]
 
 [ext_resource type="Script" uid="uid://cnsbxx5g4riyn" path="res://ProjetoBase/Menus/MenuPause.gd" id="1_k7g53"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu28e"]
+bg_color = Color(0.4, 0.4, 0.4, 0.768627)
+
 [node name="MenuPause" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_k7g53")
 
 [node name="Panel" type="Panel" parent="."]
@@ -18,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qu28e")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -28,15 +34,18 @@ offset_left = -375.0
 offset_right = 375.0
 offset_bottom = 649.0
 grow_horizontal = 2
+mouse_filter = 0
 
 [node name="Titulo" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 0
 theme_override_font_sizes/font_size = 50
 text = "Pause"
 horizontal_alignment = 1
 
 [node name="ResolucaoLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 0
 text = "Resolution"
 
 [node name="Resolucao" type="OptionButton" parent="VBoxContainer"]
@@ -54,12 +63,14 @@ popup/item_3/id = 3
 
 [node name="VolumeLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 0
 text = "
 Audio:"
 horizontal_alignment = 1
 
 [node name="GeralLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 0
 text = "Geral:"
 
 [node name="GeralSlider" type="HSlider" parent="VBoxContainer"]
@@ -69,6 +80,7 @@ max_value = 0.0
 
 [node name="MusicaLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 0
 text = "Music:"
 
 [node name="MusicaSlider" type="HSlider" parent="VBoxContainer"]
@@ -78,6 +90,7 @@ max_value = 0.0
 
 [node name="SFXLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+mouse_filter = 0
 text = "SFX:"
 
 [node name="SFXSlider" type="HSlider" parent="VBoxContainer"]

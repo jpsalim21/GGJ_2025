@@ -1,11 +1,15 @@
-[gd_scene load_steps=10 format=4 uid="uid://c0sscwpbpcl83"]
+[gd_scene load_steps=15 format=4 uid="uid://c0sscwpbpcl83"]
 
 [ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_uq01e"]
 [ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_hft28"]
 [ext_resource type="TileSet" uid="uid://cmvtxxxx24q4r" path="res://ProjetoBase/Tiles/Tileset.tres" id="3_17xgi"]
+[ext_resource type="AudioStream" uid="uid://cnes7acw2thjq" path="res://Audio/Nota1.wav" id="3_62d7r"]
+[ext_resource type="AudioStream" uid="uid://cwowstyx75yxw" path="res://Audio/Nota2.wav" id="3_eiyk1"]
 [ext_resource type="PackedScene" uid="uid://cug1vbuncmy08" path="res://Cenas/FinishLine.tscn" id="4_hft28"]
 [ext_resource type="Texture2D" uid="uid://lyyk5c4r0ao" path="res://Sprites/SpritesBackground 1.png" id="5_17xgi"]
 [ext_resource type="Texture2D" uid="uid://cisqh72jvibow" path="res://Sprites/SpritesBackground2.png" id="6_3flg6"]
+[ext_resource type="FontFile" uid="uid://bys3jsticywv6" path="res://Fontes/alagard.ttf" id="7_4lfc7"]
+[ext_resource type="PackedScene" uid="uid://cu5m1ct25rwpc" path="res://ProjetoBase/Menus/MenuPause.tscn" id="10_eiyk1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3flg6"]
 texture = ExtResource("5_17xgi")
@@ -107,10 +111,18 @@ texture = ExtResource("6_3flg6")
 sources/0 = SubResource("TileSetAtlasSource_3flg6")
 sources/1 = SubResource("TileSetAtlasSource_4lfc7")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4lfc7"]
+bg_color = Color(0.23, 0.23, 0.23, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Fase11" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_uq01e")]
+[node name="Player" parent="." node_paths=PackedStringArray("colorRect") instance=ExtResource("1_uq01e")]
 position = Vector2(-73, 194)
+colorRect = NodePath("../FocusRect")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(80, 80)
@@ -122,10 +134,12 @@ position = Vector2(42, 146)
 
 [node name="Jump" parent="." instance=ExtResource("2_hft28")]
 position = Vector2(151, 74)
+audioClip = ExtResource("3_eiyk1")
 
 [node name="Bolha2" parent="." node_paths=PackedStringArray("estadoAtual") instance=ExtResource("2_hft28")]
 position = Vector2(15, 188)
 estadoAtual = NodePath("../Jump/Pulo")
+audioClip = ExtResource("3_62d7r")
 
 [node name="Area2D" parent="." instance=ExtResource("4_hft28")]
 position = Vector2(324, -13)
@@ -137,7 +151,7 @@ tile_set = ExtResource("3_17xgi")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 z_index = -1
-tile_map_data = PackedByteArray("AAD2/wkAAAAEAAQAAAD2/woAAAAEAAUAAAD2/wsAAAAEAAYAAAD3/wkAAAAFAAQAAAD3/woAAAAFAAUAAAD3/wsAAAAFAAYAAAD3/wwAAAAFAAcAAAD4/wkAAAAGAAQAAAD4/woAAAAGAAUAAAD4/wsAAAAGAAYAAAD4/wwAAAAGAAcAAAD5/wkAAAAHAAQAAAD5/woAAAAHAAUAAAD5/wsAAAAHAAYAAAAEAAIAAAAEAAQAAAAEAAMAAAAEAAUAAAAEAAQAAAAEAAYAAAAFAAIAAAAFAAQAAAAFAAMAAAAFAAUAAAAFAAQAAAAFAAYAAAAFAAUAAAAFAAcAAAAGAAIAAAAGAAQAAAAGAAMAAAAGAAUAAAAGAAQAAAAGAAYAAAAGAAUAAAAGAAcAAAAHAAIAAAAHAAQAAAAHAAMAAAAHAAUAAAAHAAQAAAAHAAYAAAACAAwAAAAEAAMAAAD3/wAAAAADAAEAAAD4/wAAAAAEAAEAAAD9//7/AAADAAEAAAD+//7/AAAEAAEAAAD7/wMAAAADAAEAAAD8/wMAAAAEAAEAAAD7//7/AAACAAEAAAAAAAAAAAACAAEAAAD4/wMAAAABAAIAAAADAPz/AAABAAIAAAD9/wsAAAACAAIAAAD9/wwAAAACAAMAAAD+/wsAAAADAAIAAAD8/wcAAAABAAEAAAAAAAQAAAABAAEAAAAJAAEAAAABAAEAAAAEAAAAAAABAAEAAAD3//3/AAABAAIAAAD2/wUAAQAEAAIAAAD2/wYAAQAEAAMAAAD3/wUAAQAFAAIAAAD3/wYAAQAFAAMAAAD4/wUAAQAGAAIAAAD4/wYAAQAGAAMAAAD5/wUAAQAHAAIAAAD5/wYAAQAHAAMAAAAFAP3/AQAEAAIAAAAFAP7/AQAEAAMAAAAGAP3/AQAFAAIAAAAGAP7/AQAFAAMAAAAHAP3/AQAGAAIAAAAHAP7/AQAGAAMAAAAIAP3/AQAHAAIAAAAIAP7/AQAHAAMAAAA=")
+tile_map_data = PackedByteArray("AAD2/wkAAAAEAAQAAAD2/woAAAAEAAUAAAD2/wsAAAAEAAYAAAD3/wkAAAAFAAQAAAD3/woAAAAFAAUAAAD3/wsAAAAFAAYAAAD3/wwAAAAFAAcAAAD4/wkAAAAGAAQAAAD4/woAAAAGAAUAAAD4/wsAAAAGAAYAAAD4/wwAAAAGAAcAAAD5/wkAAAAHAAQAAAD5/woAAAAHAAUAAAD5/wsAAAAHAAYAAAAEAAIAAAAEAAQAAAAEAAMAAAAEAAUAAAAEAAQAAAAEAAYAAAAFAAIAAAAFAAQAAAAFAAMAAAAFAAUAAAAFAAQAAAAFAAYAAAAFAAUAAAAFAAcAAAAGAAIAAAAGAAQAAAAGAAMAAAAGAAUAAAAGAAQAAAAGAAYAAAAGAAUAAAAGAAcAAAAHAAIAAAAHAAQAAAAHAAMAAAAHAAUAAAAHAAQAAAAHAAYAAAACAAwAAAAEAAMAAAD3/wAAAAADAAEAAAD4/wAAAAAEAAEAAAD7/wMAAAADAAEAAAD8/wMAAAAEAAEAAAAAAAAAAAACAAEAAAD4/wMAAAABAAIAAAD9/wsAAAACAAIAAAD9/wwAAAACAAMAAAD+/wsAAAADAAIAAAD8/wcAAAABAAEAAAAAAAQAAAABAAEAAAAJAAEAAAABAAEAAAAEAAAAAAABAAEAAAD2/wUAAQAEAAIAAAD2/wYAAQAEAAMAAAD3/wUAAQAFAAIAAAD3/wYAAQAFAAMAAAD4/wUAAQAGAAIAAAD4/wYAAQAGAAMAAAD5/wUAAQAHAAIAAAD5/wYAAQAHAAMAAAA=")
 tile_set = SubResource("TileSet_4lfc7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -150,5 +164,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.833333, 1, 1)
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -168.0
+offset_top = -46.0
+offset_right = 93.0
+offset_bottom = -11.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4lfc7")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 11.0
+offset_right = 255.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("7_4lfc7")
+text = "Touch a bubble to have it's effect"
+
+[node name="FocusRect" type="ColorRect" parent="."]
+visible = false
+z_index = 2
+offset_left = -234.0
+offset_top = -92.0
+offset_right = 351.0
+offset_bottom = 255.0
+color = Color(0, 0, 0, 0.619608)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="MenuPause" parent="CanvasLayer2" instance=ExtResource("10_eiyk1")]
+visible = false
+metadata/_edit_use_anchors_ = true
 
 [editable path="Jump"]
