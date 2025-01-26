@@ -37,3 +37,9 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	else:
 		bolhaProx = null
 	pass # Replace with function body.
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_pressed("Cima") and Input.is_action_pressed("Espaco"):
+		get_tree().paused = true
+		SceneController.setPositionFocus(global_position)
+		SceneController.reloadCurrentScene("CircleToon")

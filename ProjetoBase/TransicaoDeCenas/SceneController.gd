@@ -12,6 +12,7 @@ func changeSceneTo(path : StringName, animacao1 : String = "Diamond", animacao2:
 	await Cortina.preencheTela(true, animacao1)
 	get_tree().change_scene_to_file(path)
 	Cortina.preencheTela(false, animacao2)
+	get_tree().paused = false
 	if resetFocus:
 		Cortina._setFocus(Vector2(0.5, 0.5))
 
