@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://c0sscwpbpcl83"]
+[gd_scene load_steps=16 format=4 uid="uid://c0sscwpbpcl83"]
 
 [ext_resource type="PackedScene" uid="uid://u3j7oww4i4ae" path="res://Cenas/player.tscn" id="1_uq01e"]
 [ext_resource type="PackedScene" uid="uid://b4gm4wakb54g1" path="res://Cenas/bolha.tscn" id="2_hft28"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cisqh72jvibow" path="res://Sprites/SpritesBackground2.png" id="6_3flg6"]
 [ext_resource type="FontFile" uid="uid://bys3jsticywv6" path="res://Fontes/alagard.ttf" id="7_4lfc7"]
 [ext_resource type="PackedScene" uid="uid://cu5m1ct25rwpc" path="res://ProjetoBase/Menus/MenuPause.tscn" id="10_eiyk1"]
+[ext_resource type="AudioStream" uid="uid://cj1f47wcmqc4m" path="res://Audio/MusgaDoJogo1.wav" id="11_rrifk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3flg6"]
 texture = ExtResource("5_17xgi")
@@ -195,5 +196,10 @@ color = Color(0, 0, 0, 0.619608)
 [node name="MenuPause" parent="CanvasLayer2" instance=ExtResource("10_eiyk1")]
 visible = false
 metadata/_edit_use_anchors_ = true
+
+[node name="MusgaDoJogo1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_rrifk")
+autoplay = true
+bus = &"Musica"
 
 [editable path="Jump"]
